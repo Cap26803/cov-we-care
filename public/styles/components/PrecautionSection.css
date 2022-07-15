@@ -1,0 +1,54 @@
+@import url('../utils/colors.css');
+
+
+
+.precautions .column {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.precautions .column .box-container{
+    margin: 1.5rem;
+    flex: 1 1 50rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+
+.precautions .column .box-container .title{
+    width: 100%;
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+    font-size: 2.5rem;
+    background: var(--blue);
+    color: #fff;
+}
+
+
+.precautions .column .box-container:last-child .title{
+    background-color: #ff1111d5;
+}
+
+.precautions .column .box-container .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.precautions .column .box-container .box img{
+    width: 15rem;
+    padding: 1rem;
+
+}
+
+.precautions .column .box-container .box h3{
+    font-size: 1.8rem;
+}
+
+.precautions .column .box-container .box p{
+    font-size: 1.2rem;
+    color: var(--dark-blue);
+    padding: 1rem 0;
+}

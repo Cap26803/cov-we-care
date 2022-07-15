@@ -1,0 +1,72 @@
+@import url('../utils/colors.css');
+
+
+.doctor{
+    background: url('../../images/background-img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+.doctor .box-container .box{
+    flex: 1 1 32rem;
+    background: #fff;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+.doctor .box-container .box img{
+    margin: 1rem;
+    border-radius: 50%;
+    height: 20rem;
+    width: 20rem;
+    object-fit: cover;
+    background-color: var(--bg-round);
+}
+
+.doctor .box-container .user.box img{
+    background: none;
+    height: 25rem;
+    width: 25rem;
+}
+
+.doctor .box-container .box h3{
+    font-size: 2.5rem;
+}
+
+.doctor .box-container .box span{
+    font-size: 1.5rem;
+}
+
+
+.doctor .box-container .box .share{
+    margin: 1rem;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+.doctor .box-container .box .share a{
+    border-radius: 50%;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    margin: .3rem;
+    background: #eee;
+    color: var(--blue);
+}
+
+.doctor .box-container .user.box .share a{
+    background: #eee;
+    color: var(--orange);
+}
+
+
+.doctor .box-container .box .share a:hover{
+    background: var(--orange);
+    color: #fff;
+}
+

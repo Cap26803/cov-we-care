@@ -1,0 +1,101 @@
+@import url('../utils/colors.css');
+
+
+.demographics{
+    padding: 2%;
+    background-color: #f4f6fa;
+    min-height: 50%;
+    background-color: #eee;
+}
+
+.demograph-container{
+    display: flex;
+    gap: 1rem;
+    
+}
+
+
+
+.demo__left{
+    flex: 0.2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin-right: 1rem;
+    gap: 1rem;
+    background-color: white;
+
+}
+
+.demo__left > p{
+    text-align: center;
+}
+
+.demo__left > img{
+    object-fit: contain;
+    height: 200px;
+}
+
+.demo__right{
+    flex: 0.8;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.demo-box{
+    width: 30%;
+    padding: 2.5rem;
+    cursor: pointer;   
+    
+}
+
+
+.demo-box > img{
+    object-fit: contain;
+    height: 120px;
+    margin-top: 1rem;
+}
+
+.demo-box:hover, .demo__left:hover{
+    transform: scale(1.05);
+    box-shadow: var(--box-shadow); 
+    
+}
+
+.card-title{
+    font-size: 2rem;
+}
+
+.number-data{
+    font-size: 2.5rem;
+}
+
+.demograph-container  p{
+    font-size: 1.6rem;
+}
+
+#total-cases{
+    background-color: rgb(221, 192, 234);
+}
+
+#active-cases{
+    background-color: #e8e7aa;
+}
+
+#recovered-cases{
+    background-color: #e1effb;
+}
+
+#infected-cases{
+    background-color: #f49999;
+}
+
+#deceased-cases{
+    background-color: #b5b5b5;
+}
+
+#vaccinated-cases{
+    background-color: #c9f0b9;
+}

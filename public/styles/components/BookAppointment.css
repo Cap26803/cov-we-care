@@ -1,0 +1,91 @@
+@import url('../utils/utilVar.css');
+@import url('../utils/colors.css');
+
+.row form{
+    flex: 1 1 45rem;
+    background: #fff;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.row form h3{
+    color: var(--black);
+    font-size: 3.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.inputBox{
+    width: 100%;
+    margin: 0.7rem;
+    padding: 0.7rem;
+    border: 0.2rem solid var(--gray-shade);
+    border-radius: 0.7rem;
+    color: var(--black);
+    font-size: 1.5rem;
+    text-transform: none;
+}
+
+.details-container{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.details-container > select{
+    padding: 1rem;
+}
+
+.details-container > textarea{
+    resize: none;
+}
+
+.contact-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+
+.gender{
+    flex: 0.4;
+    display: flex;
+    flex-direction: column;
+}
+
+.gender > label{
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.gender-options, .gender-option{
+    display: flex;
+}
+
+.gender-options{
+    gap: 1rem;
+}
+
+.gender-option{
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.6rem;
+}
+
+#phone{
+    margin: 0;
+}

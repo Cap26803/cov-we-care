@@ -1,0 +1,54 @@
+<section class="register">
+
+    <div class="register-form">
+        <h1 class="register_header">Register Now</h1>
+        <span class="alt-text">Already an account? </span> <a class="register_link" href="/signIn"> Login </a>
+
+        <form action="/users/new" method="post" id="register_form">
+            
+            <div class="field">
+                <h2 class="field_heading"> Name </h2>
+                <input class="input_field" placeholder="Name" type="text" name="name" id="name">
+            </div>
+            
+            <div class="field">
+                <h2 class="field_heading">Email Address</h2>
+                <input class="input_field" placeholder="example@123.com" type="email" name="email" id="email">
+            </div>
+
+            <div class="field">
+                <div class="field_headings">
+                    <h2 class="field_heading">Password</h2>
+                </div>
+                <input class="input_field" placeholder="**********" type="password" name="password" id="password">
+            </div>
+
+
+            <div class="form-btn">
+                <input class="input_btn" type="submit" value="LOGIN">
+            </div>
+
+        </form>
+
+        <hr/>
+        
+        <div class="btn-container">
+            <div id="gbtn" class="provider_btn">
+                <img class="provider_logo" src="/images/google-logo.ico" alt="">
+                <a class="provider-link google" href="/"> Google </a>
+            </div>
+
+            <div id="fbtn" class="provider_btn fbtn">
+                <img class="provider_logo" class="google-logo" src="/images/fb-logo.png" alt="">
+                <a class="provider-link fb" href="/"> FaceBook </a>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="image_container">
+        <img src="/images/register-svg.svg" alt="">
+    </div>
+    
+</section>

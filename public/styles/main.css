@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap');
+@import url('./utils/colors.css');
+@import url('./components/NavBar.css');
+@import url('./components/HomeSection.css');
+@import url('./components/PreventSection.css');
+@import url('./components/SymptomsSection.css');
+@import url('./components/PrecautionSection.css');
+@import url('./components/DoctorSection.css');
+@import url('./components/HandWashSection.css');
+@import url('./components/Footer.css');
+@import url('./components/Demographics.css');
+@import url('./components/About.css');
+@import url('./components/BookAppointment.css');
+@import url('./components/Blogs.css');
+@import url('./components/UserHome.css');
+@import url('./pageStyles/UserPage.css');
+@import url('./components/MapSection.css');
+@import url('./pageStyles/signInPage.css');
+@import url('./pageStyles/registerPage.css');
+@import url('./pageStyles/Error.css');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.3s cubic-bezier(0.38, 1.15, 0.7, 1.12);
+    scroll-behavior: smooth;
+}
+
+*::selection{
+    background: var(--dark-blue);
+    color: #fff;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+
+
+
+section{
+    min-height: 100vh;
+    padding: 1rem 9%;
+    padding-top: 8rem;
+}
+
+
+
+.scroll-top{
+    position: fixed;
+    bottom: 5.5rem;
+    right: 1.5rem;
+    z-index: 50;
+}
+
+.scroll-top img{
+    width: 5rem;
+    animation: float 1.5s linear infinite;
+}
+
+
+.overlay{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; 
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 100%;
+}
+
+
+#close{
+    font-size: 30px;
+    color: gray;
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+    color: black;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+
+#modal-card{
+    background-color: #fff;
+    height: 30rem;
+    padding: 2rem;
+    width: 50%;
+    margin: auto;
+    position: relative;
+}
+
+#modal-card-header{
+    position: relative;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#modal-card-content > p{
+    margin-top: 3rem;
+    font-size: 1.7rem;
+}
+
+.modal-card-actions > button{
+    position: absolute;
+    bottom: 20px;
+    left: 25%;
+    display: block;
+    width: 50%;
+    font-size: 2rem;
+    padding: 0.5rem;
+    background-color: var(--blue);
+    color: white;
+    padding: 1rem;
+}
+
+
+@keyframes float {
+    100%, 0%{
+        transform: translateY(0rem);
+    }
+
+    50%{
+        transform: translateY(-3rem);
+    }
+}
+
+.user-heading span , .heading span{
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+@media (max-width: 1200px){
+    html{
+        font-size: 55%;
+    }
+    
+}
+
+@media (max-width: 991px){
+    
+    section{
+        padding: 1rem 3%;
+    }
+
+    .demographics .column{
+        flex-direction: column;
+    }
+    
+    
+
+
+    #menu{
+        display: block;
+    }
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 2rem;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    .navbar.nav-toggle{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    .navbar a{
+        display: block;
+        margin: 1.5rem 0;
+        font-size: 2rem;
+    }
+    
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    .main-image img{
+        display: none;
+    }
+
+    .symptoms .box img{
+        width: 14rem;
+    }
+
+    .handWash .column .main-image img{
+        display: none;
+    }
+
+    .demographics .column{
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+@media (max-width: 780px){
+    html{
+        font-size: 50%;
+    }
+    
+    .content h1{
+        font-size: 4rem;
+    }
+
+    .content h3{
+        font-size: 2.5rem;
+    }
+
+    .precautions .column .box-container .box{
+        flex-flow: column;
+        text-align: center;
+    }
+
+    .image_container{
+        display: none;
+    }
+
+}
+
+
+
+@media (max-width: 450px){
+    
+    .content h1{
+        font-size: 3.5rem;
+    }
+
+    .content h3{
+        font-size: 2.5rem;
+    }
+
+    .doctor .box-container .box{
+        width: 100%;
+    }
+    
+}

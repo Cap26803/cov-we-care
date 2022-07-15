@@ -1,0 +1,42 @@
+@import url('../utils/colors.css');
+
+
+
+.home{
+    background: url('../../images/home-bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.content{
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.content h1{
+    font-size: 5rem;
+    color: var(--dark-blue);
+}
+
+.content h3{
+    font-size: 4rem;
+    color: var(--blue);
+    font-weight: normal;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.7rem 3rem;
+    color: #fff;
+    background-color: var(--blue);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+    margin-top: 1rem;
+    margin-right: 1rem;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    background-color: var(--dark-blue);
+}

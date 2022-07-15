@@ -1,0 +1,22 @@
+.symptoms{
+    background: url('../../images/background-img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-image img{
+    width: 38vh;
+}
+
+.symptoms .box{
+    flex: 1 1 25rem;
+    margin: 1rem;
+    text-align: center;
+}

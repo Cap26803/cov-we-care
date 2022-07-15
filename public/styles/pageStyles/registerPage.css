@@ -1,0 +1,138 @@
+@import url('../utils/colors.css');
+
+:root{
+    --red: rgb(209, 44, 44);
+    --fb-blue: rgba(36, 36, 156, 0.767);
+}
+
+.image_container{
+    flex: 0.7;
+}
+
+.register{
+    background-color: rgba(173, 173, 173, 0.3);
+    padding-top: 2rem;
+    display: flex;
+    flex: 0.3;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.register-form{
+    background-color: white;
+    padding: 3rem;
+}
+
+.register_header{
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.alt-text{
+    color: #777;
+    font-size: 1.4rem;
+}
+
+.register_link{
+    font-size: 1.4rem;
+    font-weight: 600;
+    /* text-decoration: underline; */
+    color: black;
+}
+
+.field{
+    margin: 2rem 0;
+}
+
+.input_field{
+    padding: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1.2px solid gray;
+    text-transform: none;
+}
+
+
+.field_headings{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.field_heading{
+    font-size: 1.8rem;
+}
+
+
+.forgot_password{
+    color: black;
+    text-decoration: underline;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+.form-btn > input{
+    width: 100%;
+    background-color: rgb(233, 119, 91);
+    padding: 1rem;
+    color: white;
+    margin-top: 1.5rem;
+    text-align: center;
+    font-weight:800;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.btn-container{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.provider_btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 2rem;
+}
+
+.provider-link{
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+.provider_logo{
+    max-height: 25px;
+    max-width: 25px;
+}
+
+#gbtn{
+    border: 2px solid var(--red);
+}
+
+
+
+#fbtn{
+    border: 2px solid var(--fb-blue);
+}
+
+
+.google{
+    color: var(--red);
+}
+
+.fb{
+    color: var(--fb-blue);
+}

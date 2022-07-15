@@ -1,0 +1,64 @@
+@import url('../utils/colors.css');
+@import url('../utils/utilVar.css');
+
+
+#about{
+    padding-top: 0rem;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.row .image{
+    flex: 1 1 45rem; 
+}
+
+.row .image img{
+    width: 100%; 
+}
+
+.row .content{
+    flex: 1 1 45rem; 
+}
+
+.row .content h3{
+    color: var(--black);
+    text-shadow: var(--text-shadow);
+    line-height: 1.8;
+}
+
+
+.row .content p{
+    color: var(--gray-shade);
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+.user-btn{
+    display: inline-block;
+    padding: 0.8rem 3.5rem;
+    border: 0.2rem solid var(--orange);
+    color: var(--black);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);  */
+    margin-top: 1rem;
+    margin-right: 1rem;
+    font-size: 1.7rem;
+}
+
+.user-btn:hover{
+    /* box-shadow: var(--box-shadow); */
+    background-color: var(--orange);
+    color: #fff;
+}
+
+.user-btn span, .user-btn i{
+    margin-left: 1rem;
+}

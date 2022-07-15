@@ -1,0 +1,30 @@
+.handWash .column{
+    display: flex;
+    justify-content: center;
+}
+
+.handWash .column .main-image img{
+    width: 25vw;
+}
+
+.handWash .column .box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.handWash .column .box-container .box{
+    flex: 1 1 17rem;
+}
+
+.handWash .column .box-container .box img{
+    width: 17rem;
+    height: 17rem;
+    padding: 1rem;
+}
+
+
+.handWash .column .box-container .box h3{
+    font-size: 2rem;
+}

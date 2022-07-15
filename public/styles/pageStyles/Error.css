@@ -1,0 +1,51 @@
+.container{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: url('../../images/background-img.jpg') no-repeat    ;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container > *{
+    margin: 0.5rem;
+}
+
+.main-heading{
+    font-size: 3.6rem;
+    font-weight: 900;
+}
+
+.content-text{
+    font-size: 1.8rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#error-code{
+    font-size: 25rem;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.btn-err{
+    padding: 1rem 3rem;
+    background-color: rgba(224, 94, 43, 0.685);
+    font-size: 1.8rem;
+    color: white;
+    border-radius: 8px;
+    font-weight: 800;
+    transition: all;
+    
+}
+
+.btn-err:hover{
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    transition-duration: 0.3s;
+}
+
+
+.btn-err:active{
+    transform: scale(85%);
+}

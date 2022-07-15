@@ -1,0 +1,144 @@
+<header id = "header" class="header">
+
+    <a href="/" class="logo"> C<span class="fas fa-virus"> </span>v We Care </a>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <nav id="navbar" class="navbar">
+        <a class="active" href="#user-home" class="nav-link"> Home </a>
+        <a href="#about" class="nav-link"> About </a>
+        <a href="#prevent" class="nav-link"> Prevent </a>
+        <a href="#appointments" class="nav-link"> Book Appointment </a>
+        <a href="#doctor" class="nav-link"> Doctors</a>
+        <a href="#blogs" class="nav-link"> Blogs </a>
+
+    </nav>
+    
+</header>
+
+<!--  -->
+
+<!-- Home -->
+<%- include('../components/UserHome.ejs') %>
+
+
+
+<!-- About -->
+<%- include('../components/About.ejs')  %> 
+
+
+<!-- Prevent Section -->
+<%- include('../components/PreventSection.ejs')  %> 
+
+<!-- Appointments -->
+<%- include('../components/BookAppointment.ejs')  %> 
+
+
+<!-- Doctors Section -->
+<section id="doctor" class="user doctor">
+
+    <h1 class="user-heading">
+        Consult our <span>doctors</span>
+    </h1>
+
+    <div class="box-container">
+
+        <div class="user box">
+            <img src="/images/doc-1.jpg" alt="">
+            <h3>John Doe</h3>
+            <span>Senior Expert</span>
+            <div class="share">
+                <a href="/" class="fab fa-whatsapp"></a>
+                <a href="/" class="fab fa-facebook-f"></a>
+                <a href="/" class="fab fa-twitter"></a>
+                <a href="/" class="fab fa-instagram"></a>
+                <a href="/" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+
+        <div class="user box">
+            <img src="/images/doc-2.jpg" alt="">
+            <h3>John Doe</h3>
+            <span>Senior Expert</span>
+            <div class="share">
+                <a href="/" class="fab fa-whatsapp"></a>
+                <a href="/" class="fab fa-facebook-f"></a>
+                <a href="/" class="fab fa-twitter"></a>
+                <a href="/" class="fab fa-instagram"></a>
+                <a href="/" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+
+        <div class="user box">
+            <img src="/images/doc-3.jpg" alt="">
+            <h3>John Doe</h3>
+            <span>Senior Expert</span>
+            <div class="share">
+                <a href="/" class="fab fa-whatsapp"></a>
+                <a href="/" class="fab fa-facebook-f"></a>
+                <a href="/" class="fab fa-twitter"></a>
+                <a href="/" class="fab fa-instagram"></a>
+                <a href="/" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+
+        <div class="user box">
+            <img src="/images/doc-4.jpg" alt="">
+            <h3>John Doe</h3>
+            <span>Senior Expert</span>
+            <div class="share">
+                <a href="/" class="fab fa-whatsapp"></a>
+                <a href="/" class="fab fa-facebook-f"></a>
+                <a href="/" class="fab fa-twitter"></a>
+                <a href="/" class="fab fa-instagram"></a>
+                <a href="/" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+
+        <div class="user box">
+            <img src="/images/doc-5.jpg" alt="">
+            <h3>John Doe</h3>
+            <span>Senior Expert</span>
+            <div class="share">
+                <a href="/" class="fab fa-whatsapp"></a>
+                <a href="/" class="fab fa-facebook-f"></a>
+                <a href="/" class="fab fa-twitter"></a>
+                <a href="/" class="fab fa-instagram"></a>
+                <a href="/" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+
+        <div class="user box">
+            <img src="/images/doc-6.jpg" alt="">
+            <h3>John Doe</h3>
+            <span>Senior Expert</span>
+            <div class="share">
+                <a href="/" class="fab fa-whatsapp"></a>
+                <a href="/" class="fab fa-facebook-f"></a>
+                <a href="/" class="fab fa-twitter"></a>
+                <a href="/" class="fab fa-instagram"></a>
+                <a href="/" class="fab fa-linkedin"></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Precautions -->
+<%- include('../components/Blogs.ejs')  %> 
+
+
+<!-- Footer -->
+<%- include('../components/Footer.ejs')  %> 
+
+
+
+<!-- Scroll Up Functionality -->
+<%- include('../utils/scroll_Up.ejs', {home: 'user-home'})  %> 

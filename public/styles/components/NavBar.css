@@ -1,0 +1,50 @@
+@import url('../utils/colors.css');
+
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    padding: 2rem;
+}
+
+
+.header.sticky{
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+
+.logo{
+    font-size: 2.5rem;
+    color: var(--dark-blue);
+}
+
+.logo span{
+    color: var(--blue);
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    margin-left: 0.7rem;
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    color: var(--dark-blue);
+}
+
+a.active, .navbar a:hover{
+    background: var(--blue);
+    color: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+}
+
+#menu{
+    font-size: 3rem;
+    color: var(--blue);
+    cursor: pointer;
+    display: none;
+}

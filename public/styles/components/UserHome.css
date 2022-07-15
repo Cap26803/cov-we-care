@@ -1,0 +1,25 @@
+@import url('../utils/colors.css');
+@import url('../utils/utilVar.css');
+
+.user-home{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    padding-top: 15rem;
+}
+
+
+.user-home .content h3{
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.8;
+    text-shadow: var(--text-shadow);
+}
+
+
+.user-home .content p{
+    font-size: 1.7rem;
+    color: var(--gray-shade);
+    line-height: 1.8;
+    padding: 1rem 0;
+}

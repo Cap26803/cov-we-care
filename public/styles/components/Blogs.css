@@ -1,0 +1,72 @@
+@import url('../utils/colors.css');
+@import url('../utils/utilVar.css');
+
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+}
+
+.blogs .box-container .blog.box{
+    border: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
+
+.blogs .box-container .blog.box:hover{
+    box-shadow: var(--box-shadow);
+}
+
+.blog.box .image{
+    overflow: hidden;
+    height: 20rem;
+}
+
+
+.blog.box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog.box .image img:hover{
+    transform: scale(1.02);
+}
+
+
+.blog.box .content{
+    padding-top: 2rem;
+    
+}
+
+.blog.box .content .icon{
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog.box .content .icon a{
+    font-size: 1.4rem;
+    color: var(--gray-shade);
+}
+
+.blog.box .content .icon a:hover{
+    color: var(--black);
+}
+
+
+.blog.box .content h3{
+    color: var(--black);
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+.blog.box .content p{
+    color: var(--gray-shade);
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.blog.box .content .user-btn{
+    margin-bottom: 1rem;
+}
+
+

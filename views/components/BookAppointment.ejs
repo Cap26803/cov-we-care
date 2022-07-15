@@ -1,0 +1,71 @@
+<section id="appointments">
+    <h1 class="user-heading"> <span>Book</span> Now </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="/images/book-img.svg" alt="">
+        </div>
+
+        <form id="booking-form">
+            
+            <h3>Book Appointment</h3>
+            
+            <div class="input-container">
+                <input type="text" placeholder="Name" id="name" class="inputBox" required>
+
+                <div class="contact-container">
+                    <div style="flex: 0.6;">
+                        <input type="tel" placeholder="Contact Number" minlength="10" maxlength="10" id="phone" class="inputBox" required>
+                    </div>
+                    <div class="gender">
+                        <label for="gender"> Gender </label>
+                        <div class="gender-options">    
+                            <div class="gender-option">
+                                <label>Male</label>
+                                <input type="radio" name="gender" value="Male" id="male">
+                            </div>
+
+                            <div class="gender-option">
+                                <label>Female</label>
+                                <input type="radio" name="gender" value="Female" id="female">
+                            </div>
+
+                            <div class="gender-option">
+                                <label>Others</label>
+                                <input type="radio" name="gender" value="Others" id="others">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="email" placeholder="your-email@example.com" id="email" class="inputBox" required>
+                <input type="date" class="inputBox" id="date" required>
+                <div class="details-container">
+                    <textarea name="address" class="inputBox" id="address" cols="50" rows="5" placeholder="Enter your address"></textarea>
+                    <select name="age" id="age" class="inputBox">
+                        <option value="Less than 1">Less than 1</option>
+                        <option value="1 - 18"> 1 - 18 </option>
+                        <option value="19 - 40"> 19 - 40 </option>
+                        <option value="More than 40">More than 40</option>
+                    </select>
+                </div>
+                <select name="healthCenter" id="healthCenter" class="inputBox" required>
+                    <option disabled>Choose your health center</option>
+                    <option value="Usha Health Care"> Usha Health Care </option>
+                    <option value="Maatrutya Nursing Home"> Maatrutya Nursing Home </option>
+                    <option value="MotherCare Maternity Home"> MotherCare Maternity Home </option>
+                    <option value="Arogya Health Center"> Arogya Health Center </option>
+                    <option value="Suvidhaa HealthCare"> Suvidhaa HealthCare </option>
+                    <option value="Veerbhadra Arogyam"> Veerbhadra Arogyam </option>
+                    <option value="Govt Hospital, Bhagya Nagar">Govt Hospital, Bhagya Nagar</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Book Now" class="user-btn">
+        </form>
+
+
+    </div>
+
+</section>
