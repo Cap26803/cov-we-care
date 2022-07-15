@@ -26,6 +26,7 @@ if(location.pathname === '/users'){
             // console.log(registerForm);
             const authToken = await fetch(`http://localhost:3000/users/new`, {
                 method: "POST", 
+                mode: 'no-cors',
                 headers: {
                     "Content-Type": "application/json",
                     "Access-Control-Allow-Origin": "*"
