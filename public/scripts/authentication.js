@@ -24,7 +24,7 @@ if(location.pathname === '/users'){
             const password = document.getElementById('password').value;
 
             // console.log(registerForm);
-            const authToken = await fetch('http://localhost:3000/users/new', {
+            const authToken = await fetch(`http://localhost:3000/users/new`, {
                 method: "POST", 
                 headers: {
                     "Content-Type": "application/json"
