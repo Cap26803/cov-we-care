@@ -61,7 +61,7 @@ if(location.pathname === '/users'){
             const email = document.getElementById('semail').value;
             const password = document.getElementById('spassword').value;
 
-            const authToken = await fetch(`${API_URL}/signIn`, {
+            const authToken = await fetch(`/signIn`, {
                 method: "POST", 
                 headers: {
                     "Content-Type": "application/json"
