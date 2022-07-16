@@ -220,7 +220,7 @@ async function cancelAppointment(appointmentId){
 }
 
 // Function to perform retrieval of documents from the collection
-function getDocCollection(collectionName, limitNum = 5){
+async function getDocCollection(collectionName, limitNum = 5){
 
     try {
         const q = query(collection(db, collectionName), limit(limitNum));
