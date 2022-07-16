@@ -25,8 +25,8 @@ if(location.pathname === '/users'){
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // console.log(registerForm);
-            const authToken = await fetch(`${API_URL}/users/new`, {
+
+            const authToken = await fetch(`/users/new`, {
                 method: "POST", 
                 headers: {
                     "Content-Type": "application/json"
