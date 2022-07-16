@@ -1,4 +1,6 @@
 const token = localStorage.getItem('auth-token');
+const API_URL = '192.46.211.251:3000';
+
 
 if(location.pathname === '/users'){
 
@@ -24,7 +26,7 @@ if(location.pathname === '/users'){
             const password = document.getElementById('password').value;
 
             // console.log(registerForm);
-            const authToken = await fetch(`http://localhost:3000/users/new`, {
+            const authToken = await fetch(`${API_URL}/users/new`, {
                 method: "POST", 
                 headers: {
                     "Content-Type": "application/json"
@@ -59,7 +61,7 @@ if(location.pathname === '/users'){
             const email = document.getElementById('semail').value;
             const password = document.getElementById('spassword').value;
 
-            const authToken = await fetch('http://localhost:3000/signIn', {
+            const authToken = await fetch(`${API_URL}/signIn`, {
                 method: "POST", 
                 headers: {
                     "Content-Type": "application/json"
