@@ -1,5 +1,4 @@
 const token = localStorage.getItem('auth-token');
-const API_URL = '192.46.211.251:3000';
 
 
 if(location.pathname === '/users'){

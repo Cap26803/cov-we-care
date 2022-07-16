@@ -1,15 +1,16 @@
-export function isAuthenticated(req, res, next){
+function isAuthenticated(req, res, next){
 
     try{
         const userId = req.header('user');
 
     } catch(err){
-
+        console.error(err);
+        res.status(500).json(err);
     }
 
 }
 
-export function isAdmin(req, res, next){
+function isAdmin(req, res, next){
     try{
         const adminId = req.header('admin');
 
@@ -22,6 +23,11 @@ export function isAdmin(req, res, next){
 
     } catch(err){
         console.error(err);
-        res.status(500).json(err);
+        return res.status(500).send(err.message);
     }
+}
+
+module.exports = {
+    isAdmin,
+    isAuthenticated
 }

@@ -186,18 +186,39 @@ async function updateDailyData(dataToUpdate){
 async function receiveUserAppointments(user){
 
     try{
-        
         const q = query(collection(db, 'appointments'), where('userId', '==', user), orderBy('date', 'desc'), limit(5));
-        // const appointments = [];
         
-        const appointments = await getDocs(q);
+        const appointments = [];
+        const dataSnap = await getDocs(q);
+        dataSnap.forEach(appointment => {
+            appointments.push(appointment.data());
+        })
         
-
+        return appointments;
     }
     
     catch(error){
         console.error(error);
     }
+}
+
+async function receiveAppointments(healthCenter){
+    try{
+        const q = query(collection(db, 'appointments'), where('healthCenter', '==', healthCenter), orderBy('date', 'desc'));
+        
+        const appointments = [];
+        const dataSnap = await getDocs(q);
+        dataSnap.forEach(appointment => {
+            appointments.push(appointment.data());
+        })
+        
+        return appointments;
+    }
+    
+    catch(error){
+        console.error(error);
+    }
+
 }
 
 async function cancelAppointment(appointmentId){
@@ -226,7 +247,9 @@ async function getDocCollection(collectionName, limitNum = 5){
         const q = query(collection(db, collectionName), limit(limitNum));
         const dataArr = [];
         const dataSnap = await getDocs(q);
-        
+        dataSnap.forEach((doc) => {
+            dataArr.push(doc);
+        })
 
         return dataArr;
 
@@ -276,5 +299,6 @@ module.exports = {
     updateDailyData,
     bookAppointment,
     getDailyCovidData,
-    saveDailyData
+    saveDailyData,
+    receiveAppointments
 }
