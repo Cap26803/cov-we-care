@@ -183,14 +183,14 @@ async function updateDailyData(dataToUpdate){
 }
 
 
-function receiveUserAppointments(user){
+async function receiveUserAppointments(user){
 
     try{
         
         const q = query(collection(db, 'appointments'), where('userId', '==', user), orderBy('date', 'desc'), limit(5));
         // const appointments = [];
         
-        const appointments = await get
+        const appointments = await getDocs(q);
         
 
     }
