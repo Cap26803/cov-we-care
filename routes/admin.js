@@ -13,7 +13,8 @@ const router = require('express').Router();
 router.get('/appointments', isAdmin, async (req, res) => {
     try{
         const healthCenter = req.query.health_center;
-        if(healthCenter === null || healthCenter !== ''){
+
+        if(healthCenter === null || healthCenter === ''){
             return res.status(400).send("Health Center is to be specified");
         }
 

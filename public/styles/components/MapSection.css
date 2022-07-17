@@ -1,0 +1,17 @@
+#map{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#map > img{
+    object-fit: contain;
+    height: 800px;
+}
+
+#map > h1{
+    font-size: 4.7rem;
+}

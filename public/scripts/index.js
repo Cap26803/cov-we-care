@@ -9,7 +9,7 @@ const navLinks = document.querySelectorAll('header .navbar a');
 function stickyNav(){
     if(window.scrollY > 0){
         header.classList.add('sticky');
-        scrollIcon.style.display = "block"
+        if(scrollIcon != null) scrollIcon.style.display = "block"
     } else{
         header.classList.remove('sticky');
         scrollIcon.style.display = "none";
