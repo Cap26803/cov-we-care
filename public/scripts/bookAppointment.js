@@ -33,7 +33,7 @@ if(bookingForm != null){
             age
         }
         
-        const response = await fetch('http://localhost:3000/api/data/appointments/new', {
+        const response = await fetch('/api/data/appointments/new', {
             method: "POST",
             headers:{
                 'auth-token': localStorage.getItem('auth-token'),
