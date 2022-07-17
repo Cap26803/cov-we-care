@@ -10,6 +10,7 @@ const router = require('express').Router();
 // Every admin will have healthcenter name
 // Show all appointments
 
+
 router.get('/appointments', isAdmin, async (req, res) => {
     try{
         const healthCenter = req.query.health_center;
@@ -26,6 +27,29 @@ router.get('/appointments', isAdmin, async (req, res) => {
         console.error(err);
         res.status(500).json(err);
     }
+})
+
+
+router.get('/appointments/:id', isAdmin,  async (req, res) => {
+
+    try{
+        const appointmentId = req.params.id;
+
+        const appointmentRef = doc(db, 'appointments', appointmentId);
+        const appointmentSnap = await getDoc(appointmentRef);
+
+        if(!appointmentSnap.exists()) res.status(400).json({message: "Appointment Not Found"});
+
+        res.status(200).json({
+            message: "Operation successful",
+            success: true,
+            data: appointmentSnap.data()
+        });
+
+    } catch(err){
+
+    }
+
 })
 
 
