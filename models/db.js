@@ -1,5 +1,5 @@
-const {db} = require("./firebase")
-const {collection, doc, getDoc, setDoc, updateDoc, onSnapshot, query, orderBy, limit, deleteDoc, addDoc, serverTimestamp, where, FirestoreError} = require('firebase/firestore');
+const { db } = require("./firebase")
+const { collection, doc, getDoc, setDoc, updateDoc, query, orderBy, limit, deleteDoc, addDoc, serverTimestamp, where, getDocs } = require('firebase/firestore');
 
 
 // Fetches the data from Firestore with specified Collection Name and DocID 
@@ -131,7 +131,9 @@ async function bookAppointment(formData, userId){
             email,
             healthCenter,
             userId,
-            created_at: serverTimestamp()
+            created_at: serverTimestamp(),
+            isApproved: false,
+            isDeclined: false
         }
         // console.log(dataToSave);
 
@@ -181,27 +183,41 @@ async function updateDailyData(dataToUpdate){
 }
 
 
-function receiveAppointments(user){
+async function receiveUserAppointments(user){
 
     try{
-        
         const q = query(collection(db, 'appointments'), where('userId', '==', user), orderBy('date', 'desc'), limit(5));
+        
         const appointments = [];
+        const dataSnap = await getDocs(q);
+        dataSnap.forEach(appointment => {
+            appointments.push(appointment.data());
+        })
         
-        const unsub = onSnapshot(q, (doc) => {
-            doc.forEach(element => {
-                appointments.push(element.data());
-            });
-        });
-        
-        return appointments.length !== 0 ? appointments : null;
-
+        return appointments;
     }
     
     catch(error){
         console.error(error);
     }
+}
 
+async function receiveAppointments(healthCenter){
+    try{
+        const q = query(collection(db, 'appointments'), where('healthCenter', '==', healthCenter), orderBy('date', 'desc'));
+        
+        const appointments = [];
+        const dataSnap = await getDocs(q);
+        dataSnap.forEach(appointment => {
+            appointments.push(appointment.data());
+        })
+        
+        return appointments;
+    }
+    
+    catch(error){
+        console.error(error);
+    }
 
 }
 
@@ -225,16 +241,15 @@ async function cancelAppointment(appointmentId){
 }
 
 // Function to perform retrieval of documents from the collection
-function getDocCollection(collectionName, limitNum){
+async function getDocCollection(collectionName, limitNum = 5){
 
     try {
         const q = query(collection(db, collectionName), limit(limitNum));
         const dataArr = [];
-        const unsub = onSnapshot(q, (doc) => {
-            doc.forEach((docData) => {
-                dataArr.push(docData.data());
-            });
-        });
+        const dataSnap = await getDocs(q);
+        dataSnap.forEach((doc) => {
+            dataArr.push(doc);
+        })
 
         return dataArr;
 
@@ -280,9 +295,10 @@ module.exports = {
     getHealthCentreInfo,
     getRegionData,
     cancelAppointment,
-    receiveAppointments,
+    receiveUserAppointments,
     updateDailyData,
     bookAppointment,
     getDailyCovidData,
-    saveDailyData
+    saveDailyData,
+    receiveAppointments
 }

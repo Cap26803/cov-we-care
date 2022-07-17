@@ -1,5 +1,6 @@
 const token = localStorage.getItem('auth-token');
 
+
 if(location.pathname === '/users'){
 
     if(token == null || token == undefined){
@@ -23,8 +24,8 @@ if(location.pathname === '/users'){
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
 
-            // console.log(registerForm);
-            const authToken = await fetch(`http://localhost:3000/users/new`, {
+
+            const authToken = await fetch(`/users/new`, {
                 method: "POST", 
                 mode: 'no-cors',
                 headers: {
@@ -61,7 +62,7 @@ if(location.pathname === '/users'){
             const email = document.getElementById('semail').value;
             const password = document.getElementById('spassword').value;
 
-            const authToken = await fetch('http://localhost:3000/signIn', {
+            const authToken = await fetch(`/signIn`, {
                 method: "POST", 
                 headers: {
                     "Content-Type": "application/json"
