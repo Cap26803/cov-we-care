@@ -72,7 +72,7 @@ if(location.pathname === '/users'){
             })
 
             const token = await authToken.json();
-            console.log(token);
+            console.log(authToken);
 
             if (token != null) {
                 localStorage.setItem('auth-token', token.token);
