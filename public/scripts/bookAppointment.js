@@ -30,7 +30,8 @@ if(bookingForm != null){
             date,
             healthCenter,
             address,
-            age
+            age,
+            userId: localStorage.getItem('user')
         }
         
         const response = await fetch('/api/data/appointments/new', {

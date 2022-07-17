@@ -27,10 +27,8 @@ if(location.pathname === '/users'){
 
             const authToken = await fetch(`/users/new`, {
                 method: "POST", 
-                mode: 'no-cors',
                 headers: {
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Origin": "*"
+                    "Content-Type": "application/json"
                 }, 
                 body: JSON.stringify({
                     uname,
