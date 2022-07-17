@@ -9,6 +9,10 @@ const router = require('express').Router();
 
 // Every admin will have healthcenter name
 // Show all appointments
+router.get('/', (req, res) => {
+    res.render('pages/User');
+})
+
 
 
 router.get('/appointments', isAdmin, async (req, res) => {

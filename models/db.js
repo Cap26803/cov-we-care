@@ -87,7 +87,8 @@ const saveUser = async (user) => {
         id: user.uid,
         name: user.displayName,
         email: user.email, 
-        phoneNumber: user.phoneNumber
+        phoneNumber: user.phoneNumber,
+        isAdmin: false
     })
 
     return isUserSaved;

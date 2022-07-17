@@ -1,7 +1,8 @@
 const { signOut } = require('firebase/auth');
+const { getDoc, doc } = require('firebase/firestore');
 const { signInUser } = require('../authentication/auth');
 const { getDailyCovidData } = require('../models/db');
-const { auth } = require('../models/firebase');
+const { auth, db } = require('../models/firebase');
 
 const router = require('express').Router();
 
@@ -50,7 +51,7 @@ router.post('/signIn', async (req, res) => {
 
     try{    
 
-        const {email, password} = req.body;
+        const { email, password } = req.body;
 
         const user = await signInUser(email, password);
 
@@ -60,9 +61,17 @@ router.post('/signIn', async (req, res) => {
             // res.json(user.uid);
             const token = await user.getIdToken();
             const userId = user.uid;
+            let isAdmin = false;
+            const userData = await getDoc(doc(db, 'users', userId));
+            
+            if(userData.data().isAdmin){
+                isAdmin = true;
+            } 
+
             res.json({
                 token,
-                userId
+                userId,
+                isAdmin
             });
             // res.status(200).redirect('/users');
             

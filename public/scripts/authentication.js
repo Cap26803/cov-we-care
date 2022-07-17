@@ -1,7 +1,7 @@
 const token = localStorage.getItem('auth-token');
 
 
-if(location.pathname === '/users'){
+if(location.pathname === '/users' || location.pathname === '/admin'){
 
     if(token == null || token == undefined){
         location.pathname = '/signIn';
@@ -44,8 +44,6 @@ if(location.pathname === '/users'){
             if (token != null) {
                 localStorage.setItem('auth-token', token.token);
                 localStorage.setItem('user', token.userId);
-                
-                location.pathname = '/users';
             }
 
         })
@@ -77,7 +75,11 @@ if(location.pathname === '/users'){
             if (token != null) {
                 localStorage.setItem('auth-token', token.token);
                 localStorage.setItem('user', token.userId);
-                location.pathname = '/users';
+                if(token.isAdmin){
+                    location.pathname= '/admin';
+                } else{
+                    location.pathname = '/users';
+                }
             }
 
 
@@ -92,6 +94,7 @@ const logout = document.getElementById('logoutForm');
 if(logout){
     logout.addEventListener('submit', () => {
         localStorage.removeItem('auth-token');
+        localStorage.removeItem('user');
     })
 }
 
