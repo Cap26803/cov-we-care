@@ -40,12 +40,8 @@ router.post('/new', async (req, res) => {
         if(newUser.success){
             newUser.user.displayName = uname;
             await saveUser(newUser.user);
-            // localStorage.setItem('auth_token', newUser.user.uid);
             res.json({token: newUser.user.accessToken, userId: newUser.user.uid});
         }
-
-        // res.redirect('/users');
-        // res.send("User Created");
         else{
             throw new Error('Error Creating User');
         }

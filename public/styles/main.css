@@ -114,8 +114,9 @@ section{
 
 
 #modal-card-content > p{
-    margin-top: 3rem;
-    font-size: 1.7rem;
+    margin-top: 4rem;
+    font-size: 1.9rem;
+    text-align: center;
 }
 
 .modal-card-actions > button{
@@ -129,6 +130,7 @@ section{
     background-color: var(--blue);
     color: white;
     padding: 1rem;
+    cursor: pointer;
 }
 
 

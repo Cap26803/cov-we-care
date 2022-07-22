@@ -4,7 +4,7 @@ const logOutLink = document.getElementById('sidebar-logout');
 
 Array.from(contentBlocks).forEach(content => {
     content.addEventListener('click', () => {
-        showModal('Title', `Displaying some content. Right now demo thing`);
+        showAdminModal('John Doe', `Heavy Fever since two weeks. Typhoid risk`, "APPROVE");
     });
 });
 

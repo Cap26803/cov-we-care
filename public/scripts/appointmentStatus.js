@@ -4,7 +4,7 @@ if(userHome !== null){
     const appointmentStatusBtn = document.getElementById('appointment-status');
     
     appointmentStatusBtn.addEventListener('click', () => {
-        showModal('Appointment Status', `Congratulations Omkar! Your Appointment has been approved`);
-    })
+        showAppointmentStatusModal('Congrats!!', `Your appointment in Usha Health center has been approved!`);
+    });
 
 }

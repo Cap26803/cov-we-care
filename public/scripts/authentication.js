@@ -36,14 +36,12 @@ if(location.pathname === '/users'){
                     password
                 })
             })
-
-            const { token } = await authToken.json();
-            console.log(token);
-
+            
+            const { token, userId } = await authToken.json();
 
             if (token != null) {
-                localStorage.setItem('auth-token', token.token);
-                localStorage.setItem('user', token.userId);
+                localStorage.setItem('auth-token', token);
+                localStorage.setItem('user', userId);
                 location.pathname = '/users';
             }
 
