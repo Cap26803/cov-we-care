@@ -79,7 +79,7 @@ if(bookingForm != null){
         const healthCenter = document.getElementById('healthCenter').value;
         const genderVal = document.querySelector("input[type='radio'][name=gender]:checked").value;
         const address = document.getElementById('address').value;
-        const age = parseInt(document.getElementById('age').value.slice(0, 2));
+        const age = document.getElementById('age').value;
         
 
         const data = {
