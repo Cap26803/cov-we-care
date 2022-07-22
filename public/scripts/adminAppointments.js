@@ -4,7 +4,10 @@ const logOutLink = document.getElementById('sidebar-logout');
 
 Array.from(contentBlocks).forEach(content => {
     content.addEventListener('click', () => {
-        showAdminModal('John Doe', `Heavy Fever since two weeks. Typhoid risk`, "APPROVE");
+        const patientName = content.children[0].textContent;
+        const ailment = content.children[1].textContent;
+
+        showAdminModal(patientName, ailment, "APPROVE");
     });
 });
 

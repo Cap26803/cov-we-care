@@ -15,6 +15,7 @@ const showModal = (title = "", content = "") => {
     modalContent.textContent = content;
 }
 
+
 const showAppointmentStatusModal = (title, content, btnText = "OKAY") => {
     overlay.style.display = "flex";
 
@@ -26,6 +27,7 @@ const showAppointmentStatusModal = (title, content, btnText = "OKAY") => {
 
     closeBtn.textContent = btnText;
 }
+
 
 const showAdminModal = (title = "", content = "", btnText = "") => {
     overlay.style.display = "flex";
