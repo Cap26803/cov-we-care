@@ -1,9 +1,9 @@
 const token = localStorage.getItem('auth-token');
 
 
-if(location.pathname === '/users' || location.pathname === '/admin'){
+if(location.pathname === '/users'){
 
-    if(token == null || token == undefined){
+    if(token == null){
         location.pathname = '/signIn';
     }
 } 
@@ -44,6 +44,7 @@ if(location.pathname === '/users' || location.pathname === '/admin'){
             if (token != null) {
                 localStorage.setItem('auth-token', token.token);
                 localStorage.setItem('user', token.userId);
+                location.pathname = '/users';
             }
 
         })

@@ -10,7 +10,19 @@ const router = require('express').Router();
 // Every admin will have healthcenter name
 // Show all appointments
 router.get('/', (req, res) => {
-    res.render('pages/User');
+
+    try{
+
+        if(req.query.only_approved_appointments || req.query.only_declined_appointments){
+            res.render('pages/Admin');
+        }
+
+        res.render('pages/Admin');
+
+    } catch(err){
+        console.error(err);
+        res.status(500).render('pages/ServerError');
+    }
 })
 
 
@@ -65,12 +77,12 @@ router.put('/appointments/:id', isAdmin, async (req, res) => {
         const { isApproved, isDeclined } = req.body;    
         const docRef = doc(db, 'appointments', req.params.id)
         let appointment = await getDoc(docRef);
-        appointment = appointment.data();
+        let oldAppointment = appointment.data();
 
-        appointment.isApproved = isApproved;
-        appointment.isDeclined = isDeclined;
+        oldAppointment.isApproved = isApproved;
+        oldAppointment.isDeclined = isDeclined;
 
-        const updatedAppointment = await updateDoc(docRef, appointment.data());
+        const updatedAppointment = await updateDoc(docRef, oldAppointment);
 
         if(updatedAppointment) throw new Error('Operation Failed');
         

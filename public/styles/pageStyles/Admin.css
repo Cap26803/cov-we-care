@@ -1,0 +1,63 @@
+.admin-container{
+    padding: 0 1.5rem 0 0;
+    display: flex;
+}
+
+.sidebar{
+    width: 20%;
+    max-height: 100%;
+    height: 100vh;
+    background-color: var(--orange);
+}
+
+.sidebar-links{
+    padding: 1rem;
+
+}
+
+.sidebar-links li{
+    list-style-type: none;
+    margin: 2rem 0.25rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    
+}
+
+.sidebar-links li a{
+    color: var(--dark-blue);
+    color: white;
+}
+
+.active{
+    background-color: rgba(59, 59, 59, 0.56);
+}
+
+.content-wrapper{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+    background: url('../../images/background-img.jpg') no-repeat    ;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.appointment-content {
+    cursor: pointer;
+    background-color: rgb(190, 178, 178);
+    border-radius: 1rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.appointment-content h4{
+    font-size: 2rem;
+}
+
+.appointment-content p{
+    font-size: 1.7rem;
+}

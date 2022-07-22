@@ -4,8 +4,14 @@ const closeIcon = document.getElementById('close');
 const closeBtn = document.getElementById('closeBtn');
 
 
-const showModal = () => {
+const showModal = (title = "", content = "") => {
     overlay.style.display = "flex";
+
+    const modalHeader = document.querySelector('#modal-card-header h4');
+    modalHeader.textContent = title;
+
+    const modalContent = document.querySelector('#modal-card-content p');
+    modalContent.textContent = content;
 }
 
 

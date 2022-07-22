@@ -19,6 +19,7 @@
 @import url('./pageStyles/registerPage.css');
 @import url('./pageStyles/Error.css');
 @import url('./pageStyles/Dashboard.css');
+@import url('./pageStyles/Admin.css');
 
 
 *{
