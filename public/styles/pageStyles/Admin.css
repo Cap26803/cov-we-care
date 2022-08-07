@@ -35,7 +35,7 @@
 }
 
 .content-wrapper{
-    padding: 2rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -44,6 +44,8 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    max-height: 100vh;
+    overflow-y: scroll;
 }
 
 .appointment-content {

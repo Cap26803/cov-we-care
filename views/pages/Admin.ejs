@@ -5,12 +5,12 @@
                 <a href="/admin">Appointments</a>
             </li>
 
-            <li class="sidebar-link">
-                <a href="/admin?only_approved_appointments=true"> Approved </a>
+            <li id="approved-link" class="sidebar-link">
+                <a href="#" id="approved-appointments"> Approved </a>
             </li>
 
-            <li class="sidebar-link">
-                <a href="/admin?only_declined_appointments=true"> Declined </a>
+            <li id="declined-link" class="sidebar-link">
+                <a href="#" id="declined-appointments"> Declined </a>
             </li>
 
             <li class="sidebar-link">
@@ -19,23 +19,6 @@
         </ul>
     </div>
 
-    <div class="content-wrapper">
-        
-        <div class="appointment-content">
-            <h4> Jon Doe </h4>
-            <p>Heavy Fever since two weeks.</p>
-        </div>
-
-        <div class="appointment-content">
-            <h4> Rohan Sharma </h4>
-            <p> Chest Pain, Breathlessness </p>
-        </div>
-
-        <div class="appointment-content">
-            <h4> Sachin Duggal </h4>
-            <p> Diahorrea from yesterday </p>
-        </div>
-
-    </div>
+    <div id="admin-content-wrapper" class="content-wrapper"></div>
 
 </section>
