@@ -7,7 +7,6 @@ if (userHome !== null) {
     const userAppointments = await getUserAppointments();
 
     const latestAppointment = userAppointments?.appointments[0];
-    console.log(latestAppointment);
     if (!latestAppointment) {
       showAppointmentStatusModal("Oops!", "No appointments found!");
       return;
