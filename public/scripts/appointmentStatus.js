@@ -21,7 +21,7 @@ if (userHome !== null) {
 
     showAppointmentStatusModal(
       `${message}`,
-      `Your appointment in ${latestAppointment.healthCenter} ${status}!`
+      `Your appointment in ${latestAppointment?.healthCenter} ${status}!`
     );
   });
 }
