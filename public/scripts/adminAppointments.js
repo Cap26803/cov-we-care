@@ -85,85 +85,89 @@ async function getAdminDeclinedAppointments() {
 })();
 
 // Show only approved appointments
-approveBtn.addEventListener("click", async () => {
-  try {
-    Array.from(sidebarLinks).forEach((link) => {
-      if (link.getAttribute("id") === "approved-link") {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
+if (approveBtn !== null) {
+  approveBtn.addEventListener("click", async () => {
+    try {
+      Array.from(sidebarLinks).forEach((link) => {
+        if (link.getAttribute("id") === "approved-link") {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
 
-    adminContainer.remove();
-    const container = document.createElement("div");
-    container.classList.add("content-wrapper");
-    container.setAttribute("id", "admin-content-wrapper");
+      adminContainer.remove();
+      const container = document.createElement("div");
+      container.classList.add("content-wrapper");
+      container.setAttribute("id", "admin-content-wrapper");
 
-    const approvedAppointments = await getAdminApprovedAppointments();
-    if (approvedAppointments?.length === 0) return;
+      const approvedAppointments = await getAdminApprovedAppointments();
+      if (approvedAppointments?.length === 0) return;
 
-    approvedAppointments.forEach((appointment) => {
-      const contentBlock = document.createElement("div");
-      contentBlock.classList.add("appointment-content");
+      approvedAppointments.forEach((appointment) => {
+        const contentBlock = document.createElement("div");
+        contentBlock.classList.add("appointment-content");
 
-      const patientName = document.createElement("h4");
-      patientName.textContent = appointment?.fullName;
-      contentBlock.append(patientName);
+        const patientName = document.createElement("h4");
+        patientName.textContent = appointment?.fullName;
+        contentBlock.append(patientName);
 
-      const ailment = document.createElement("p");
-      ailment.textContent = appointment?.address;
-      contentBlock.append(ailment);
+        const ailment = document.createElement("p");
+        ailment.textContent = appointment?.address;
+        contentBlock.append(ailment);
 
-      container.append(contentBlock);
-    });
+        container.append(contentBlock);
+      });
 
-    adminParent.append(container);
-  } catch (err) {
-    console.error(err);
-  }
-});
+      adminParent.append(container);
+    } catch (err) {
+      console.error(err);
+    }
+  });
+}
 
 // Show only approved appointments
-declineBtn.addEventListener("click", async () => {
-  try {
-    adminContainer.remove();
+if (declineBtn !== null) {
+  declineBtn.addEventListener("click", async () => {
+    try {
+      adminContainer.remove();
 
-    Array.from(sidebarLinks).forEach((link) => {
-      if (link.getAttribute("id") === "declined-link") {
-        link.classList.add("active");
-      } else {
-        link.classList.remove("active");
-      }
-    });
+      Array.from(sidebarLinks).forEach((link) => {
+        if (link.getAttribute("id") === "declined-link") {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
 
-    const container = document.createElement("div");
-    container.classList.add("content-wrapper");
-    container.setAttribute("id", "admin-content-wrapper");
+      const container = document.createElement("div");
+      container.classList.add("content-wrapper");
+      container.setAttribute("id", "admin-content-wrapper");
 
-    const declinedAppointments = await getAdminDeclinedAppointments();
-    if (declinedAppointments?.length === 0) return;
+      const declinedAppointments = await getAdminDeclinedAppointments();
+      if (declinedAppointments?.length === 0) return;
 
-    declinedAppointments.forEach((appointment) => {
-      const contentBlock = document.createElement("div");
-      contentBlock.classList.add("appointment-content");
+      declinedAppointments.forEach((appointment) => {
+        const contentBlock = document.createElement("div");
+        contentBlock.classList.add("appointment-content");
 
-      const patientName = document.createElement("h4");
-      patientName.textContent = appointment?.fullName;
-      contentBlock.append(patientName);
+        const patientName = document.createElement("h4");
+        patientName.textContent = appointment?.fullName;
+        contentBlock.append(patientName);
 
-      const ailment = document.createElement("p");
-      ailment.textContent = appointment?.address;
-      contentBlock.append(ailment);
+        const ailment = document.createElement("p");
+        ailment.textContent = appointment?.address;
+        contentBlock.append(ailment);
 
-      container.append(contentBlock);
-    });
+        container.append(contentBlock);
+      });
 
-    adminParent.append(container);
-  } catch (err) {
-    console.error(err);
-  }
-});
+      adminParent.append(container);
+    } catch (err) {
+      console.error(err);
+    }
+  });
+}
 
 // Log out Admin
 logOutLink &&

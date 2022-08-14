@@ -1,7 +1,7 @@
 const token = localStorage.getItem("auth-token");
 
 if (location.pathname === "/users" || location.pathname === "/admin") {
-  if (token == null) {
+  if (token === null) {
     location.pathname = "/signIn";
   }
 }

@@ -112,13 +112,15 @@ if (bookingForm != null) {
   });
 }
 
-closeIcon.addEventListener("click", () => {
-  overlay.style.display = "none";
-});
+closeIcon &&
+  closeIcon.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
 
-closeBtn.addEventListener("click", () => {
-  overlay.style.display = "none";
-});
+closeBtn &&
+  closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
 
 window.addEventListener("click", (e) => {
   if (e.target == overlay) {
