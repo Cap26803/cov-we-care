@@ -8,6 +8,11 @@ if (userHome !== null) {
 
     const latestAppointment = userAppointments.appointments[0];
 
+    if (latestAppointment === null) {
+      showAppointmentStatusModal("Oops!", "No appointments found!");
+      return;
+    }
+
     let status = "is pending";
     let message = "Under Process";
 
