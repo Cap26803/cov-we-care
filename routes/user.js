@@ -21,9 +21,11 @@ router.get("/new", (req, res) => {
 
 router.get("/:id", async (req, res) => {
   try {
+    if (req.params.id === "null" || req.params.id === "undefined") return;
+
     const user = await getDoc(doc(db, "users", req.params.id));
 
-    if (!user.exists()) res.status(400).send("Unauthorized Access");
+    if (!user.exists()) res.status(400).json({ msg: "Unauthorized Access" });
 
     res.status(200).json({
       success: true,
