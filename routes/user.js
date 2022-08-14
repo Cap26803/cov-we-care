@@ -15,6 +15,10 @@ router.get("/", (req, res) => {
   }
 });
 
+router.get("/new", (req, res) => {
+  res.render("pages/Register");
+});
+
 router.get("/:id", async (req, res) => {
   try {
     const user = await getDoc(doc(db, "users", req.params.id));
@@ -30,10 +34,6 @@ router.get("/:id", async (req, res) => {
     res.redirect("/signIn");
     // res.send('Error')
   }
-});
-
-router.get("/new", (req, res) => {
-  res.render("pages/Register");
 });
 
 router.post("/new", async (req, res) => {

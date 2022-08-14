@@ -1,23 +1,18 @@
-@import url('../utils/colors.css');
+@import url("../utils/colors.css");
 
-
-
-
-.user-heading{
-    text-align: center;
-    color: var(--black);
-    font-size: 4rem;
-    text-transform: uppercase;
-    font-weight: 900;
-    padding: 1rem;
+.user-heading {
+  text-align: center;
+  color: var(--black);
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1rem;
 }
 
-.doctor .box-container .user.box h3{
-    color: var(--black);
+.doctor .box-container .user.box h3 {
+  color: var(--black);
 }
 
-.doctor .box-container .user.box span{
-    color: #525252;
+.doctor .box-container .user.box span {
+  color: #525252;
 }
-
-
