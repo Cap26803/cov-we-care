@@ -26,7 +26,12 @@ const showAppointmentStatusModal = (title, content, btnText = "OKAY") => {
   closeBtn.textContent = btnText;
 };
 
-const showAdminModal = (title = "", content = "", btnText = "") => {
+const showAdminModal = (
+  title = "",
+  content = "",
+  btnText = "",
+  appointmentRefId
+) => {
   overlay.style.display = "flex";
 
   const modalHeader = document.querySelector("#modal-card-header h4");
@@ -43,11 +48,46 @@ const showAdminModal = (title = "", content = "", btnText = "") => {
     declineBtn.setAttribute("id", "declineBtn");
     actions.appendChild(declineBtn);
     declineBtn.textContent = "DECLINE";
-    declineBtn.addEventListener("click", () => {
-      overlay.style.display = "none";
+    declineBtn.addEventListener("click", async () => {
+      const res = await fetch(`/admin/appointments/${appointmentRefId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          admin: localStorage.getItem("user"),
+        },
+        body: JSON.stringify({
+          isApproved: false,
+          isDeclined: true,
+        }),
+      });
+
+      const resSuccess = await res.json();
+      if (resSuccess.success) {
+        overlay.style.display = "none";
+      }
     });
   }
   closeBtn.textContent = btnText;
+
+  closeBtn.addEventListener("click", async () => {
+    const res = await fetch(`/admin/appointments/${appointmentRefId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        admin: localStorage.getItem("user"),
+      },
+      body: JSON.stringify({
+        isApproved: true,
+        isDeclined: false,
+      }),
+    });
+
+    const resSuccess = await res.json();
+    if (resSuccess.success) {
+      overlay.style.display = "none";
+    }
+  });
+
   count++; // Incrementing count after first creation of decline button
 
   const actionBtns = document.querySelectorAll(".modal-card-actions button");

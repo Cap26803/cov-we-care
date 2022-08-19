@@ -255,7 +255,9 @@ async function receiveAppointments(
     const appointments = [];
     const dataSnap = await getDocs(q);
     dataSnap.forEach((appointment) => {
-      appointments.push(appointment.data());
+      let a = appointment.data();
+      a.id = appointment.id;
+      appointments.push(a);
     });
 
     return appointments;

@@ -64,7 +64,8 @@ async function getAdminDeclinedAppointments() {
 // Show all appointments
 (async () => {
   const adminAppointments = await getAdminAppointments();
-  adminAppointments.forEach((appointment) => {
+
+  adminAppointments?.forEach((appointment) => {
     const contentBlock = document.createElement("div");
     contentBlock.classList.add("appointment-content");
 
@@ -77,10 +78,15 @@ async function getAdminDeclinedAppointments() {
     contentBlock.append(ailment);
 
     contentBlock.addEventListener("click", () => {
-      showAdminModal(patientName.textContent, ailment.textContent, "APPROVE");
+      showAdminModal(
+        patientName.textContent,
+        ailment.textContent,
+        "APPROVE",
+        appointment?.id
+      );
     });
 
-    adminContainer.append(contentBlock);
+    adminContainer?.append(contentBlock);
   });
 })();
 
