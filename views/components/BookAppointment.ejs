@@ -43,13 +43,17 @@
                 <input type="date" class="inputBox" id="date" required>
                 <div class="details-container">
                     <textarea name="address" class="inputBox" id="address" cols="50" rows="5" placeholder="Enter the ailment"></textarea>
-                    <select name="age" id="age" class="inputBox">
-                        <option value="Less than 1">Less than 1</option>
-                        <option value="1 - 18"> 1 - 18 </option>
-                        <option value="19 - 40"> 19 - 40 </option>
-                        <option value="More than 40">More than 40</option>
-                    </select>
+                    <div>
+                        <label for="age" style="font-size: 1.4rem; font-weight: 700; text-align: left; width: 100%; display: block; margin-left: 1rem;">Age</label>
+                        <select name="age" id="age" class="inputBox">
+                            <option value="Less than 1">Less than 1</option>
+                            <option value="1 - 18"> 1 - 18 </option>
+                            <option value="19 - 40"> 19 - 40 </option>
+                            <option value="More than 40">More than 40</option>
+                        </select>
+                    </div>
                 </div>
+                <label for="healthCenter" style="font-size: 1.4rem; font-weight: 700; text-align: left; width: 100%; display: block; margin-left: 1rem;">Health Center</label>
                 <select name="healthCenter" id="healthCenter" class="inputBox" required>
                     <option disabled>Choose your health center</option>
                     <option value="Usha Health Care"> Usha Health Care </option>
