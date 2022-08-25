@@ -10,8 +10,8 @@ router.get("/", (req, res) => {
     res.render("pages/UserPage");
   } catch (e) {
     console.log("Error Logging In");
-    res.redirect("/signIn");
-    // res.send('Error')
+    // res.redirect("/signIn");
+    res.json({error: e});
   }
 });
 
@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
 
     const user = await getDoc(doc(db, "users", req.params.id));
 
-    if (!user.exists()) res.status(400).json({ msg: "Unauthorized Access" });
+    if (!user.exists()) return res.status(400).json({ msg: "Unauthorized Access" });
 
     res.status(200).json({
       success: true,
@@ -33,8 +33,8 @@ router.get("/:id", async (req, res) => {
     });
   } catch (e) {
     console.log(e);
-    res.redirect("/signIn");
-    // res.send('Error')
+    // res.redirect("/signIn");
+    res.json({err: e});
   }
 });
 
